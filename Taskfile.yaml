@@ -1,0 +1,19 @@
+version: '3'
+
+tasks:
+  outdated:
+    desc: List outdated Python packages
+    cmds:
+      - uv pip list --outdated
+
+  install-deps:
+    desc: Install the package and all dependencies
+    cmds:
+      - uv pip install -e .
+
+  update-deps:
+    desc: Update all dependencies to their latest versions
+    cmds:
+      - uv pip compile pyproject.toml --upgrade
+      - uv pip sync pyproject.toml
+      - uv pip install -e .

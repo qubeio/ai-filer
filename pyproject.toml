@@ -1,0 +1,57 @@
+# schema: https://packaging.python.org/en/latest/discussions/distributing-project-name-and-version/
+[project]
+name = "ai-filer"
+version = "0.1.0"
+description = "An AI-powered filing system. Monitors a MacOS directory for new scanned documents, and uses LLMs to categorize them into a filing system."
+authors = [
+  {name = "Andreas Frangopoulos", email = "andreas@qubeio.com"}
+]
+readme = "README.md"
+
+dependencies = [
+  "ollama",
+  "openai",
+  "python-dotenv",
+  "watchdog",
+  "pytesseract",
+  "Pillow",
+  "exception",
+  "pdf2image",
+  "requests",
+  "loguru",
+  "setuptools",
+  "configparser",
+]
+requires-python = ">=3.13"
+
+maintainers = [
+  {name = "Andreas Frangopoulos", email = "andreas@qubeio.com"}
+]
+license = {file = "LICENSE"}
+keywords = ["filing", "ai", "llm"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python"
+]
+
+[project.optional-dependencies]
+black = ["black"]
+isort = ["isort"]
+flake8 = ["flake8"]
+
+
+[project.urls]
+Homepage = "https://example.com"
+Documentation = "https://readthedocs.org"
+Repository = "https://github.com/me/spam.git"
+"Bug Tracker" = "https://github.com/me/spam/issues"
+Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3 

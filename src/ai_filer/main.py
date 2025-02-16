@@ -135,7 +135,7 @@ def main():
                 logger.info(f"Classification completed: {directory}")
 
                 # Generate filename
-                filename = ai.generate_filename(text)
+                filename = ai.generate_filename(summary)
                 if filename:
                     logger.info(f"Generated filename: {filename}")
                     # Add OCR text and metadata before moving

@@ -22,6 +22,10 @@ class OCR:
         """Perform OCR on a pdf file and return extracted text.
         Converts each page of the PDF to an image and performs OCR using pytesseract.
         Returns the concatenated text from all pages.
+        Args:
+            file_path (str): The path to the PDF file to perform OCR on.
+        Returns:
+            str: The concatenated text from all pages of the PDF.
         """
         if os.environ.get('USE_CACHED_OCR'):
             logger.info("Using cached OCR")

@@ -53,7 +53,12 @@ class AI:
                 return None
 
     def summarize_document(self, text: str) -> str:
-        """Summarize a document's content."""
+        """Summarize a document's content.
+        Args:
+            text (str): The text of the document to summarize.
+        Returns:
+            str: The summary of the document.
+        """
         prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 'summarize.txt')
         with open(prompt_path, 'r') as f:
             prompt_template = f.read()
@@ -62,7 +67,13 @@ class AI:
         return self._call_llm(prompt)
 
     def classify_document(self, summary: str, tree: list[str]) -> str:
-        """Classify a document based on its summary."""
+        """Classify a document based on its summary.
+        Args:
+            summary (str): The summary of the document.
+            tree (list[str]): The tree of directories to classify the document into.
+        Returns:
+            str: The category of the document.
+        """
         prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 'classify.txt')
         with open(prompt_path, 'r') as f:
             prompt_template = f.read()
@@ -81,7 +92,12 @@ class AI:
         return category
 
     def generate_filename(self, text: str) -> str:
-        """Generate a descriptive filename for a document."""
+        """Generate a descriptive filename for a document.
+        Args:
+            text (str): The text of the document to generate a filename for.
+        Returns:
+            str: The generated filename.
+        """
         prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 'describe.txt')
         with open(prompt_path, 'r') as f:
             prompt_template = f.read()

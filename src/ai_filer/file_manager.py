@@ -62,7 +62,7 @@ class FileManager:
             original_dir = os.path.dirname(file_path)
             # Create new path in the same directory as the original file
             new_file_path = os.path.join(original_dir, f"{new_name}.{extension}")
-            
+
             os.rename(file_path, new_file_path)
             self.logger.info(f"File renamed {os.path.basename(file_path)} to {new_name}.{extension}")
             # Move the file to the correct folder
@@ -110,7 +110,7 @@ class FileManager:
             # Save the file with metadata
             with open(file_path, 'wb') as output_file:
                 writer.write(output_file)
-            
+
             self.logger.info(f"Added metadata to {os.path.basename(file_path)}")
         except Exception as e:
             self.logger.error(

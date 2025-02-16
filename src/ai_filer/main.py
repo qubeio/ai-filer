@@ -138,6 +138,17 @@ def main():
                 filename = ai.generate_filename(text)
                 if filename:
                     logger.info(f"Generated filename: {filename}")
+                    # Add OCR text and metadata before moving
+                    file_manager.add_metadata_to_pdf(
+                        pdf_file,
+                        {
+                            'OCRText': text,
+                            'Summary': summary,
+                            'Category': directory,
+                            'ProcessedDate': datetime.now().isoformat(),
+                            'Keywords': summary[:100]  # First 100 chars of summary as keywords
+                        }
+                    )
                     file_manager.rename_and_move_file(pdf_file, filename, directory, 'pdf')
 
             except Exception as e:

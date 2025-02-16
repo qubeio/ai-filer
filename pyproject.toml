@@ -21,6 +21,7 @@ dependencies = [
   "loguru",
   "setuptools",
   "configparser",
+  "PyPDF2"
 ]
 requires-python = ">=3.13"
 

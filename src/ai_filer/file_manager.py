@@ -2,6 +2,7 @@ import os
 from loguru import logger
 import shutil
 from .types import Config
+from PyPDF2 import PdfReader, PdfWriter
 
 
 class FileManager:
@@ -79,3 +80,42 @@ class FileManager:
     def get_all_pdf_files_in_folder(self, folder: str) -> list[str]:
         """Get all pdf files in a folder. Returns a list of full paths."""
         return [os.path.join(folder, f) for f in os.listdir(folder) if f.endswith('.pdf')]
+
+    def add_metadata_to_pdf(self, file_path: str, metadata: dict):
+        """Add metadata to PDF file including OCR text.
+        Args:
+            file_path (str): Path to the PDF file
+            metadata (dict): Dictionary of metadata to add
+        """
+        if os.environ.get('TESTING'):
+            self.logger.info(f"Would add metadata to {file_path}: {metadata}")
+            return
+
+        try:
+            reader = PdfReader(file_path)
+            writer = PdfWriter()
+
+            # Copy all pages
+            for page in reader.pages:
+                writer.add_page(page)
+
+            # Format metadata with proper PDF prefix
+            pdf_metadata = {
+                f'/{k}': str(v) for k, v in metadata.items()
+            }
+
+            # Add metadata
+            writer.add_metadata(pdf_metadata)
+
+            # Save the file with metadata
+            with open(file_path, 'wb') as output_file:
+                writer.write(output_file)
+            
+            self.logger.info(f"Added metadata to {os.path.basename(file_path)}")
+        except Exception as e:
+            self.logger.error(
+                "Failed to add metadata to PDF",
+                file_name=os.path.basename(file_path),
+                error=str(e)
+            )
+            raise

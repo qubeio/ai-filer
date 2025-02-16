@@ -131,14 +131,14 @@ def main():
                 logger.info(f"Summary completed: {summary}")
 
                 # Classify
-                category = ai.classify_document(summary, tree)
-                logger.info(f"Classification completed: {category}")
+                directory = ai.classify_document(summary, tree)
+                logger.info(f"Classification completed: {directory}")
 
                 # Generate filename
                 filename = ai.generate_filename(text)
                 if filename:
                     logger.info(f"Generated filename: {filename}")
-                    # ... handle file moving/renaming ...
+                    file_manager.rename_and_move_file(pdf_file, filename, directory, 'pdf')
 
             except Exception as e:
                 logger.error(f"Failed to process {pdf_file}: {str(e)}")

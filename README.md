@@ -108,12 +108,13 @@ Run the script manually:
 4. Add a cron job to run every day at 12:00:
 
    ```bash
-   0 12 * * * /path/to/run_filer.sh >> /path/to/logfile.log 2>&1
+   0 12 * * * /path/to/run_filer.sh >> /path/to/logFile.log 2>&1
    ```
 
 ## File Organization
 
 The system organizes files into categories like:
+
 - Tax/Council Tax
 - Bills/Utilities
 - Medical

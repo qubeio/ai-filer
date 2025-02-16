@@ -46,19 +46,29 @@ class FileManager:
             return dirs
         return ','.join([f'"{d}"' for d in walk_dir(root_folder)])
 
-    def rename_and_move_file(self, file_path, new_name):
+    def rename_and_move_file(self, file_path, new_name, relative_path, extension):
         """Renames a file to a new name and moves it to the correct folder.
         Args:
             file_path (str): The path to the file to rename.
             new_name (str): The new name for the file.
         """
-        self.logger.debug("Renaming file", file_name=os.path.basename(file_path), new_name=new_name)
+        self.logger.debug(f"Renaming file {os.path.basename(file_path)} to {new_name}.{extension}")
         if os.environ.get('TESTING'):
-            self.logger.info("Would rename file", file_name=os.path.basename(file_path), new_name=new_name)
+            self.logger.info(f"Would rename file {os.path.basename(file_path)} to {new_name}.{extension}")
             return
         try:
-            os.rename(file_path, new_name)
-            self.logger.info("File renamed", file_name=os.path.basename(file_path), new_name=new_name)
+            # Get the directory of the original file
+            original_dir = os.path.dirname(file_path)
+            # Create new path in the same directory as the original file
+            new_file_path = os.path.join(original_dir, f"{new_name}.{extension}")
+            
+            os.rename(file_path, new_file_path)
+            self.logger.info(f"File renamed {os.path.basename(file_path)} to {new_name}.{extension}")
+            # Move the file to the correct folder
+            self.move_file(new_file_path, os.path.join(self.config['dest_folder'], relative_path))
+            self.logger.info(
+                f"File moved {os.path.basename(file_path)} to {os.path.join(self.config['dest_folder'],
+                                                                            relative_path)}")
         except Exception as e:
             self.logger.error(
                         "Failed to rename file",

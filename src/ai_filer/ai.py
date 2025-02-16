@@ -14,7 +14,7 @@ class AI:
         self.ollama_url = 'http://localhost:11434/api/generate'
 
         if self.config['model'] == 'openai':
-            self.openai_key = os.environ.get('OPENAI_API_KEY')
+            self.openai_key = os.environ.get('OPENAI_API_KEY', self.config['openai_api_key'])
             if not self.openai_key:
                 raise ValueError("OPENAI_API_KEY environment variable must be set")
             self.openai_client = OpenAI(api_key=self.openai_key)

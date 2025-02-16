@@ -63,7 +63,8 @@ def get_config_from_file_or_env() -> Config:
         'dest_folder': '',
         'model': 'llama3.2',  # default model
         'debug': False,
-        'testing': False
+        'testing': False,
+        'openai_api_key': ''
     }
 
     # Try to read from config file first
@@ -76,7 +77,8 @@ def get_config_from_file_or_env() -> Config:
             'dest_folder': parser.get(configparser.UNNAMED_SECTION, 'dest_folder', fallback=''),
             'model': parser.get(configparser.UNNAMED_SECTION, 'model', fallback='llama3.2'),
             'debug': parser.getboolean(configparser.UNNAMED_SECTION, 'debug', fallback=False),
-            'testing': parser.getboolean(configparser.UNNAMED_SECTION, 'testing', fallback=False)
+            'testing': parser.getboolean(configparser.UNNAMED_SECTION, 'testing', fallback=False),
+            'openai_api_key': parser.get(configparser.UNNAMED_SECTION, 'openai_api_key', fallback='')
         })
 
     # Environment variables override config file
@@ -85,7 +87,8 @@ def get_config_from_file_or_env() -> Config:
         'dest_folder': os.environ.get('DEST_FOLDER', config['dest_folder']),
         'model': os.environ.get('MODEL', config['model']),
         'debug': os.environ.get('DEBUG', config['debug']) in ('1', 'true', 'True'),
-        'testing': os.environ.get('TESTING', config['testing']) in ('1', 'true', 'True')
+        'testing': os.environ.get('TESTING', config['testing']) in ('1', 'true', 'True'),
+        'openai_api_key': os.environ.get('OPENAI_API_KEY', config['openai_api_key'])
     })
     logger.debug(f"Config: watch_folder={config['watch_folder']}, dest_folder={config['dest_folder']}")
     logger.debug(f"Config: model={config['model']}, debug={config['debug']}, testing={config['testing']}")

@@ -8,3 +8,4 @@ class Config(TypedDict):
     model: str
     debug: bool
     testing: bool
+    openai_api_key: str

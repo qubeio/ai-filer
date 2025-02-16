@@ -83,6 +83,11 @@ Run the script manually:
    #!/bin/bash
    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+   # If using homebrew's poppler
+   if [ -d "/opt/homebrew" ]; then
+      export PATH="/opt/homebrew/bin:$PATH"
+   fi
+
    cd /path/to/ai_filer
    source .venv/bin/activate
    python -m ai_filer

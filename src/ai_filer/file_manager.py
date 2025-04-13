@@ -1,7 +1,7 @@
 import os
 from loguru import logger
 import shutil
-from .types import Config
+from ai_filer.types import Config
 from PyPDF2 import PdfReader, PdfWriter
 
 

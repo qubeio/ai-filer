@@ -21,7 +21,10 @@ dependencies = [
   "loguru",
   "setuptools",
   "configparser",
-  "PyPDF2"
+  "PyPDF2",
+  "google-genai",
+  "keyring",
+  "pycryptodome"
 ]
 requires-python = ">=3.13"
 

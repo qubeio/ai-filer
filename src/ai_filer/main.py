@@ -5,7 +5,7 @@ import configparser
 from datetime import datetime
 from loguru import logger
 from .ai import AI
-from .ocr import OCR
+from .providers.ocr import OCR
 from .file_manager import FileManager
 from .types import Config
 
@@ -64,7 +64,8 @@ def get_config_from_file_or_env() -> Config:
         'model': 'llama3.2',  # default model
         'debug': False,
         'testing': False,
-        'openai_api_key': ''
+        'openai_api_key': '',
+        'use_mac_keyring': False
     }
 
     # Try to read from config file first
@@ -78,7 +79,8 @@ def get_config_from_file_or_env() -> Config:
             'model': parser.get(configparser.UNNAMED_SECTION, 'model', fallback='llama3.2'),
             'debug': parser.getboolean(configparser.UNNAMED_SECTION, 'debug', fallback=False),
             'testing': parser.getboolean(configparser.UNNAMED_SECTION, 'testing', fallback=False),
-            'openai_api_key': parser.get(configparser.UNNAMED_SECTION, 'openai_api_key', fallback='')
+            'openai_api_key': parser.get(configparser.UNNAMED_SECTION, 'openai_api_key', fallback=''),
+            'use_mac_keyring': parser.getboolean(configparser.UNNAMED_SECTION, 'use_mac_keyring', fallback=False)
         })
 
     # Environment variables override config file
@@ -88,7 +90,8 @@ def get_config_from_file_or_env() -> Config:
         'model': os.environ.get('MODEL', config['model']),
         'debug': os.environ.get('DEBUG', config['debug']) in ('1', 'true', 'True'),
         'testing': os.environ.get('TESTING', config['testing']) in ('1', 'true', 'True'),
-        'openai_api_key': os.environ.get('OPENAI_API_KEY', config['openai_api_key'])
+        'openai_api_key': os.environ.get('OPENAI_API_KEY', config['openai_api_key']),
+        'use_mac_keyring': os.environ.get('USE_MAC_KEYRING', config['use_mac_keyring']) in ('1', 'true', 'True')
     })
     logger.debug(f"Config: watch_folder={config['watch_folder']}, dest_folder={config['dest_folder']}")
     logger.debug(f"Config: model={config['model']}, debug={config['debug']}, testing={config['testing']}")
@@ -110,9 +113,6 @@ def main():
     # Initialize AI
     ai = AI(config)
 
-    # Initialize OCR
-    ocr = OCR(config)
-
     # Initialize FileManager
     file_manager = FileManager(config)
 
@@ -122,12 +122,13 @@ def main():
 
         for pdf_file in pdf_files:
             try:
-                # Extract text
-                logger.info(f"Processing OCR for {os.path.basename(pdf_file)}")
-                text = ocr.perform_ocr_on_pdf(pdf_file)
-
-                # Get summary
-                summary = ai.summarize_document(text)
+                logger.info(f"Processing {os.path.basename(pdf_file)} with {ai.config['model']}")
+                
+                # Extract text from PDF - provider will handle the appropriate method
+                text = ai.extract_text_from_pdf(pdf_file)
+                
+                # Summarize the document - provider will use the appropriate method
+                summary = ai.summarize_document(text=text, pdf_file=pdf_file)
                 logger.info(f"Summary completed: {summary}")
 
                 # Classify

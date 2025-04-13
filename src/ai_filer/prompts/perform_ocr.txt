@@ -1,0 +1,5 @@
+Please extract all the text content from this PDF document. Include all text from headers, footers, paragraphs, tables, captions, and any other textual elements. Maintain the original structure as much as possible.
+
+If the document contains images with text, please transcribe that text as well. If there are any charts or diagrams, describe their content briefly.
+
+Return only the extracted text without any additional commentary.

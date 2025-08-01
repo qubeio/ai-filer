@@ -1,0 +1,184 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Create new Xcode project and set up basic SwiftUI app structure",
+      "description": "Set up the foundation for the macOS Swift app with proper project configuration",
+      "details": "- Create new macOS SwiftUI project in Xcode\n- Set minimum deployment target to macOS 13.0\n- Configure app bundle identifier and basic info.plist\n- Set up basic ContentView with placeholder UI\n- Add required frameworks: SwiftUI, PDFKit, Foundation, FileManager\n- Create basic folder structure: Models/, Services/, Views/, Utilities/\n\n--- Updated 2025-08-01T19:39:39.604Z ---\nUPDATED FOR VSCode DEVELOPMENT:\n- Create Swift Package Manager project: `swift package init --type executable`\n- Configure Package.swift with macOS platform and dependencies\n- Set up basic project structure: Sources/, Tests/, Package.swift\n- Add required dependencies: SwiftUI, PDFKit, Foundation, FileManager\n- Create basic main.swift entry point\n- Set up folder structure: Models/, Services/, Views/, Utilities/\n- Configure build settings for macOS target\n- Test basic build with `swift build`\n\n--- Updated 2025-08-01T19:39:42.593Z ---\nUPDATED TITLE AND DESCRIPTION FOR VSCode:\n- Create Swift Package Manager project: `swift package init --type executable`\n- Configure Package.swift with macOS platform and dependencies\n- Set up basic project structure: Sources/, Tests/, Package.swift\n- Add required dependencies: SwiftUI, PDFKit, Foundation, FileManager\n- Create basic main.swift entry point\n- Set up folder structure: Models/, Services/, Views/, Utilities/\n- Configure build settings for macOS target\n- Test basic build with `swift build`\n- Set up VSCode workspace configuration\n- Configure launch.json for debugging in VSCode\n\n--- Updated 2025-08-01T19:39:45.949Z ---\nFINAL VSCode VERSION:\n- Create Swift Package Manager project: `swift package init --type executable`\n- Configure Package.swift with macOS platform and dependencies\n- Set up basic project structure: Sources/, Tests/, Package.swift\n- Add required dependencies: SwiftUI, PDFKit, Foundation, FileManager\n- Create basic main.swift entry point\n- Set up folder structure: Models/, Services/, Views/, Utilities/\n- Configure build settings for macOS target\n- Test basic build with `swift build`\n- Set up VSCode workspace configuration\n- Configure launch.json for debugging in VSCode\n- Add .vscode/settings.json for Swift development\n- Test debugging setup with breakpoints",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "high",
+      "subtasks": []
+    },
+    {
+      "id": 2,
+      "title": "Define Swift data models for Configuration and Document types",
+      "description": "Create Swift structs and enums to match Python types for configuration and document processing",
+      "details": "- Create Config struct with watchFolder, destFolder, model, debug, testing, openaiApiKey properties\n- Create Document struct with path, summary, category, filename, metadata properties\n- Create ProcessingResult enum for success/failure states\n- Create AIProvider enum for OpenAI, Gemini, Ollama options\n- Add Codable conformance for persistence\n- Include proper validation and default values",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "high",
+      "subtasks": []
+    },
+    {
+      "id": 3,
+      "title": "Create ConfigurationManager for app settings and API keys",
+      "description": "Handle app configuration with UserDefaults, Keychain integration, and settings persistence",
+      "details": "- Create ConfigurationManager class using ObservableObject\n- Implement UserDefaults storage for folder paths and basic settings\n- Add Keychain wrapper for secure API key storage\n- Include configuration validation and error handling\n- Add methods for loading/saving configuration\n- Support both file-based and UI-based configuration updates",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "high",
+      "subtasks": []
+    },
+    {
+      "id": 4,
+      "title": "Define AIProvider protocol and implement concrete AI providers",
+      "description": "Create protocol-based AI provider system matching Python architecture",
+      "details": "- Define AIProvider protocol with methods: callLLM, summarizeDocument, extractTextFromPDF, classifyDocument, generateFilename\n- Implement OpenAIProvider with GPT-4o-mini integration\n- Implement GeminiProvider with Gemini API integration  \n- Implement OllamaProvider with local Ollama API calls\n- Include error handling, rate limiting, and retry logic\n- Load and use the same prompt templates from Python version",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "high",
+      "subtasks": []
+    },
+    {
+      "id": 5,
+      "title": "Create FileManagerService for PDF operations and organization",
+      "description": "Handle file operations including scanning, moving, and organizing PDF files",
+      "details": "- Create FileManagerService class for file operations\n- Add methods for scanning PDF files in watch folder\n- Implement file moving and renaming with conflict resolution\n- Add directory tree generation for classification\n- Include file validation and error handling\n- Add testing mode that simulates operations without actual file changes",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "high",
+      "subtasks": []
+    },
+    {
+      "id": 6,
+      "title": "Implement PDFProcessingService using PDFKit",
+      "description": "Handle PDF text extraction and metadata operations using native PDFKit",
+      "details": "- Create PDFProcessingService using PDFKit framework\n- Implement text extraction from PDF documents\n- Add metadata reading and writing capabilities\n- Handle both text-based and image-based PDFs\n- Include OCR fallback for scanned documents (via Vision framework)\n- Add proper error handling for corrupted or encrypted PDFs",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "medium",
+      "subtasks": []
+    },
+    {
+      "id": 7,
+      "title": "Design and implement main window UI",
+      "description": "Create the primary user interface for the app with folder selection and processing status",
+      "details": "- Design main SwiftUI interface with sidebar navigation\n- Add folder picker for watch and destination folders\n- Create processing status panel with current document info\n- Add start/stop processing controls\n- Include recent processing history list\n- Add quick settings access and preferences button",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "medium",
+      "subtasks": []
+    },
+    {
+      "id": 8,
+      "title": "Create settings window for configuration",
+      "description": "Build comprehensive settings interface for AI providers, folders, and processing options",
+      "details": "- Create Settings window with tabbed interface\n- Add AI Provider tab with model selection and API key fields\n- Add Folders tab with watch/destination folder pickers\n- Add Processing tab with debug mode, testing mode toggles\n- Include validation and real-time configuration testing\n- Add import/export configuration functionality",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "medium",
+      "subtasks": []
+    },
+    {
+      "id": 9,
+      "title": "Implement core document processing workflow engine",
+      "description": "Create the main processing pipeline: extract → summarize → classify → generate filename → move",
+      "details": "- Create DocumentProcessor class to orchestrate the workflow\n- Implement async/await processing pipeline\n- Add progress tracking and status updates\n- Include error recovery and retry logic\n- Add processing queue for multiple documents\n- Integrate all services: AI providers, file manager, PDF processing",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "high",
+      "subtasks": []
+    },
+    {
+      "id": 10,
+      "title": "Add progress tracking and status updates to UI",
+      "description": "Implement real-time progress indicators and processing logs in the user interface",
+      "details": "- Add progress bars for individual document processing\n- Create processing log view with real-time updates\n- Add status indicators for each processing step\n- Include error reporting and user-friendly error messages\n- Add processing statistics and performance metrics\n- Implement log filtering and search functionality",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "medium",
+      "subtasks": []
+    },
+    {
+      "id": 11,
+      "title": "Implement folder monitoring using FSEvents",
+      "description": "Add automatic detection of new PDF files using native macOS file system events",
+      "details": "- Create FileWatcherService using FSEvents\n- Monitor watch folder for new PDF files\n- Add debouncing to handle rapid file changes\n- Include proper cleanup and resource management\n- Add user controls to start/stop monitoring\n- Handle edge cases like file renames and temporary files",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "medium",
+      "subtasks": []
+    },
+    {
+      "id": 12,
+      "title": "Create robust error handling and logging system",
+      "description": "Implement comprehensive error handling with user-friendly messages and detailed logging",
+      "details": "- Create centralized logging system with different levels\n- Add user-friendly error dialogs and alerts\n- Implement error recovery strategies for common failures\n- Add crash reporting and diagnostic information\n- Create log file management with rotation\n- Include network error handling for AI API calls",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "medium",
+      "subtasks": []
+    },
+    {
+      "id": 13,
+      "title": "Add proper macOS app menu integration",
+      "description": "Implement native macOS menu bar with standard menu items and keyboard shortcuts",
+      "details": "- Add File menu with Open, Import Config, Export Config options\n- Create Edit menu with standard cut/copy/paste functionality\n- Add View menu with window management options\n- Implement Help menu with documentation and about dialog\n- Add Preferences menu item that opens settings window\n- Include proper keyboard shortcuts for all menu items",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "low",
+      "subtasks": []
+    },
+    {
+      "id": 14,
+      "title": "Create unit tests and add testing validation",
+      "description": "Build comprehensive test suite for core services and functionality",
+      "details": "- Create unit tests for ConfigurationManager\n- Add tests for AI provider implementations with mock responses\n- Test FileManagerService operations with temporary directories\n- Add tests for PDF processing with sample documents\n- Create integration tests for full document processing workflow\n- Add UI tests for critical user interactions\n\n--- Updated 2025-08-01T19:39:51.929Z ---\nUPDATED FOR VSCode/Swift Package Manager:\n- Create unit tests for ConfigurationManager using XCTest\n- Add tests for AI provider implementations with mock responses\n- Test FileManagerService operations with temporary directories\n- Add tests for PDF processing with sample documents\n- Create integration tests for full document processing workflow\n- Add UI tests for critical user interactions\n- Configure test targets in Package.swift\n- Set up test coverage reporting\n- Add performance tests for document processing",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "low",
+      "subtasks": []
+    },
+    {
+      "id": 15,
+      "title": "Configure app packaging and distribution",
+      "description": "Set up app bundle, code signing, and create distribution method for personal use",
+      "details": "- Configure app bundle with proper Info.plist settings\n- Set up code signing for development/personal use\n- Add app icons and proper branding\n- Create simple installer or DMG for distribution\n- Add sandboxing configuration if needed\n- Document installation and setup process\n\n--- Updated 2025-08-01T19:39:48.949Z ---\nUPDATED FOR VSCode/Swift Package Manager:\n- Configure Package.swift with proper app bundle settings\n- Set up code signing for development/personal use\n- Add app icons and proper branding\n- Create simple installer or DMG for distribution using Swift Package Manager\n- Add sandboxing configuration if needed\n- Document installation and setup process\n- Configure build scripts for distribution\n- Set up automated builds with swift build --configuration release",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "low",
+      "subtasks": []
+    },
+    {
+      "id": 16,
+      "title": "Install required tooling and set up VSCode for Swift development",
+      "description": "Set up complete Swift development environment in VSCode with all necessary tools and extensions",
+      "details": "- Install Xcode Command Line Tools: `xcode-select --install`\n- Install Swift toolchain from swift.org if needed\n- Install VSCode Swift extension (Swift for Visual Studio Code)\n- Install Swift Package Manager extension\n- Install CodeLLDB extension for debugging Swift apps\n- Set up Swift LSP (Language Server Protocol) configuration\n- Configure VSCode settings.json for Swift development\n- Install SwiftFormat and SwiftLint for code formatting/linting\n- Set up build tasks in VSCode tasks.json for Swift Package Manager\n- Test setup by creating a simple \"Hello World\" Swift package\n- Configure launch.json for debugging macOS Swift applications",
+      "testStrategy": "",
+      "status": "pending",
+      "dependencies": [],
+      "priority": "high",
+      "subtasks": []
+    }
+  ],
+  "metadata": {
+    "created": "2024-12-19T12:00:00Z",
+    "project": "AI Filer Swift Conversion"
+  }
+}

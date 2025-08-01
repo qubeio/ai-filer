@@ -1,0 +1,16 @@
+# Task ID: 2
+# Title: Define Swift data models for Configuration and Document types
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Create Swift structs and enums to match Python types for configuration and document processing
+# Details:
+- Create Config struct with watchFolder, destFolder, model, debug, testing, openaiApiKey properties
+- Create Document struct with path, summary, category, filename, metadata properties
+- Create ProcessingResult enum for success/failure states
+- Create AIProvider enum for OpenAI, Gemini, Ollama options
+- Add Codable conformance for persistence
+- Include proper validation and default values
+
+# Test Strategy:
+

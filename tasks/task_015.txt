@@ -1,0 +1,27 @@
+# Task ID: 15
+# Title: Configure app packaging and distribution
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Set up app bundle, code signing, and create distribution method for personal use
+# Details:
+- Configure app bundle with proper Info.plist settings
+- Set up code signing for development/personal use
+- Add app icons and proper branding
+- Create simple installer or DMG for distribution
+- Add sandboxing configuration if needed
+- Document installation and setup process
+
+--- Updated 2025-08-01T19:39:48.949Z ---
+UPDATED FOR VSCode/Swift Package Manager:
+- Configure Package.swift with proper app bundle settings
+- Set up code signing for development/personal use
+- Add app icons and proper branding
+- Create simple installer or DMG for distribution using Swift Package Manager
+- Add sandboxing configuration if needed
+- Document installation and setup process
+- Configure build scripts for distribution
+- Set up automated builds with swift build --configuration release
+
+# Test Strategy:
+

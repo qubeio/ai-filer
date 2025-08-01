@@ -1,0 +1,16 @@
+# Task ID: 3
+# Title: Create ConfigurationManager for app settings and API keys
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Handle app configuration with UserDefaults, Keychain integration, and settings persistence
+# Details:
+- Create ConfigurationManager class using ObservableObject
+- Implement UserDefaults storage for folder paths and basic settings
+- Add Keychain wrapper for secure API key storage
+- Include configuration validation and error handling
+- Add methods for loading/saving configuration
+- Support both file-based and UI-based configuration updates
+
+# Test Strategy:
+

@@ -1,0 +1,28 @@
+# Task ID: 14
+# Title: Create unit tests and add testing validation
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Build comprehensive test suite for core services and functionality
+# Details:
+- Create unit tests for ConfigurationManager
+- Add tests for AI provider implementations with mock responses
+- Test FileManagerService operations with temporary directories
+- Add tests for PDF processing with sample documents
+- Create integration tests for full document processing workflow
+- Add UI tests for critical user interactions
+
+--- Updated 2025-08-01T19:39:51.929Z ---
+UPDATED FOR VSCode/Swift Package Manager:
+- Create unit tests for ConfigurationManager using XCTest
+- Add tests for AI provider implementations with mock responses
+- Test FileManagerService operations with temporary directories
+- Add tests for PDF processing with sample documents
+- Create integration tests for full document processing workflow
+- Add UI tests for critical user interactions
+- Configure test targets in Package.swift
+- Set up test coverage reporting
+- Add performance tests for document processing
+
+# Test Strategy:
+

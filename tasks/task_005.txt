@@ -1,0 +1,16 @@
+# Task ID: 5
+# Title: Create FileManagerService for PDF operations and organization
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Handle file operations including scanning, moving, and organizing PDF files
+# Details:
+- Create FileManagerService class for file operations
+- Add methods for scanning PDF files in watch folder
+- Implement file moving and renaming with conflict resolution
+- Add directory tree generation for classification
+- Include file validation and error handling
+- Add testing mode that simulates operations without actual file changes
+
+# Test Strategy:
+

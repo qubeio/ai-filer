@@ -1,0 +1,55 @@
+# Task ID: 1
+# Title: Create new Xcode project and set up basic SwiftUI app structure
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Set up the foundation for the macOS Swift app with proper project configuration
+# Details:
+- Create new macOS SwiftUI project in Xcode
+- Set minimum deployment target to macOS 13.0
+- Configure app bundle identifier and basic info.plist
+- Set up basic ContentView with placeholder UI
+- Add required frameworks: SwiftUI, PDFKit, Foundation, FileManager
+- Create basic folder structure: Models/, Services/, Views/, Utilities/
+
+--- Updated 2025-08-01T19:39:39.604Z ---
+UPDATED FOR VSCode DEVELOPMENT:
+- Create Swift Package Manager project: `swift package init --type executable`
+- Configure Package.swift with macOS platform and dependencies
+- Set up basic project structure: Sources/, Tests/, Package.swift
+- Add required dependencies: SwiftUI, PDFKit, Foundation, FileManager
+- Create basic main.swift entry point
+- Set up folder structure: Models/, Services/, Views/, Utilities/
+- Configure build settings for macOS target
+- Test basic build with `swift build`
+
+--- Updated 2025-08-01T19:39:42.593Z ---
+UPDATED TITLE AND DESCRIPTION FOR VSCode:
+- Create Swift Package Manager project: `swift package init --type executable`
+- Configure Package.swift with macOS platform and dependencies
+- Set up basic project structure: Sources/, Tests/, Package.swift
+- Add required dependencies: SwiftUI, PDFKit, Foundation, FileManager
+- Create basic main.swift entry point
+- Set up folder structure: Models/, Services/, Views/, Utilities/
+- Configure build settings for macOS target
+- Test basic build with `swift build`
+- Set up VSCode workspace configuration
+- Configure launch.json for debugging in VSCode
+
+--- Updated 2025-08-01T19:39:45.949Z ---
+FINAL VSCode VERSION:
+- Create Swift Package Manager project: `swift package init --type executable`
+- Configure Package.swift with macOS platform and dependencies
+- Set up basic project structure: Sources/, Tests/, Package.swift
+- Add required dependencies: SwiftUI, PDFKit, Foundation, FileManager
+- Create basic main.swift entry point
+- Set up folder structure: Models/, Services/, Views/, Utilities/
+- Configure build settings for macOS target
+- Test basic build with `swift build`
+- Set up VSCode workspace configuration
+- Configure launch.json for debugging in VSCode
+- Add .vscode/settings.json for Swift development
+- Test debugging setup with breakpoints
+
+# Test Strategy:
+

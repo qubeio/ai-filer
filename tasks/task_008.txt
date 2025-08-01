@@ -1,0 +1,16 @@
+# Task ID: 8
+# Title: Create settings window for configuration
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Build comprehensive settings interface for AI providers, folders, and processing options
+# Details:
+- Create Settings window with tabbed interface
+- Add AI Provider tab with model selection and API key fields
+- Add Folders tab with watch/destination folder pickers
+- Add Processing tab with debug mode, testing mode toggles
+- Include validation and real-time configuration testing
+- Add import/export configuration functionality
+
+# Test Strategy:
+

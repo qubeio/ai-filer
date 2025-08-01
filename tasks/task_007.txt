@@ -1,0 +1,16 @@
+# Task ID: 7
+# Title: Design and implement main window UI
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Create the primary user interface for the app with folder selection and processing status
+# Details:
+- Design main SwiftUI interface with sidebar navigation
+- Add folder picker for watch and destination folders
+- Create processing status panel with current document info
+- Add start/stop processing controls
+- Include recent processing history list
+- Add quick settings access and preferences button
+
+# Test Strategy:
+

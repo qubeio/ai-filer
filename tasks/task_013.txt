@@ -1,0 +1,16 @@
+# Task ID: 13
+# Title: Add proper macOS app menu integration
+# Status: pending
+# Dependencies: None
+# Priority: low
+# Description: Implement native macOS menu bar with standard menu items and keyboard shortcuts
+# Details:
+- Add File menu with Open, Import Config, Export Config options
+- Create Edit menu with standard cut/copy/paste functionality
+- Add View menu with window management options
+- Implement Help menu with documentation and about dialog
+- Add Preferences menu item that opens settings window
+- Include proper keyboard shortcuts for all menu items
+
+# Test Strategy:
+

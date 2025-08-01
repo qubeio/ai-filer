@@ -1,0 +1,16 @@
+# Task ID: 11
+# Title: Implement folder monitoring using FSEvents
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Add automatic detection of new PDF files using native macOS file system events
+# Details:
+- Create FileWatcherService using FSEvents
+- Monitor watch folder for new PDF files
+- Add debouncing to handle rapid file changes
+- Include proper cleanup and resource management
+- Add user controls to start/stop monitoring
+- Handle edge cases like file renames and temporary files
+
+# Test Strategy:
+

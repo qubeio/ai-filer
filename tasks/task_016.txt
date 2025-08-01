@@ -1,0 +1,21 @@
+# Task ID: 16
+# Title: Install required tooling and set up VSCode for Swift development
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Set up complete Swift development environment in VSCode with all necessary tools and extensions
+# Details:
+- Install Xcode Command Line Tools: `xcode-select --install`
+- Install Swift toolchain from swift.org if needed
+- Install VSCode Swift extension (Swift for Visual Studio Code)
+- Install Swift Package Manager extension
+- Install CodeLLDB extension for debugging Swift apps
+- Set up Swift LSP (Language Server Protocol) configuration
+- Configure VSCode settings.json for Swift development
+- Install SwiftFormat and SwiftLint for code formatting/linting
+- Set up build tasks in VSCode tasks.json for Swift Package Manager
+- Test setup by creating a simple "Hello World" Swift package
+- Configure launch.json for debugging macOS Swift applications
+
+# Test Strategy:
+

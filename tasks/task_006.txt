@@ -1,0 +1,16 @@
+# Task ID: 6
+# Title: Implement PDFProcessingService using PDFKit
+# Status: pending
+# Dependencies: None
+# Priority: medium
+# Description: Handle PDF text extraction and metadata operations using native PDFKit
+# Details:
+- Create PDFProcessingService using PDFKit framework
+- Implement text extraction from PDF documents
+- Add metadata reading and writing capabilities
+- Handle both text-based and image-based PDFs
+- Include OCR fallback for scanned documents (via Vision framework)
+- Add proper error handling for corrupted or encrypted PDFs
+
+# Test Strategy:
+

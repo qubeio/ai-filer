@@ -1,0 +1,16 @@
+# Task ID: 9
+# Title: Implement core document processing workflow engine
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Create the main processing pipeline: extract → summarize → classify → generate filename → move
+# Details:
+- Create DocumentProcessor class to orchestrate the workflow
+- Implement async/await processing pipeline
+- Add progress tracking and status updates
+- Include error recovery and retry logic
+- Add processing queue for multiple documents
+- Integrate all services: AI providers, file manager, PDF processing
+
+# Test Strategy:
+

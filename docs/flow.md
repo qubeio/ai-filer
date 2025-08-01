@@ -27,7 +27,7 @@ graph TD
         H --> H1{Provider Type}
         H1 -->|OpenAI| H2[Use OpenAI Vision]
         H1 -->|Gemini| H3[Use Gemini Vision]
-        H1 -->|Ollama| H4[Use Local OCR]
+        H1 -->|Ollama| H4[Use Locals OCR]
     end
 
     subgraph Error Handling

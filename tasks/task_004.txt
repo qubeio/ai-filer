@@ -1,0 +1,16 @@
+# Task ID: 4
+# Title: Define AIProvider protocol and implement concrete AI providers
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Create protocol-based AI provider system matching Python architecture
+# Details:
+- Define AIProvider protocol with methods: callLLM, summarizeDocument, extractTextFromPDF, classifyDocument, generateFilename
+- Implement OpenAIProvider with GPT-4o-mini integration
+- Implement GeminiProvider with Gemini API integration  
+- Implement OllamaProvider with local Ollama API calls
+- Include error handling, rate limiting, and retry logic
+- Load and use the same prompt templates from Python version
+
+# Test Strategy:
+

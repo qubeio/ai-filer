@@ -49,3 +49,8 @@ build/
 
 # Personal cron script
 run_filer.sh
+
+# Crush local data
+.crush/
+tui_debug.log
+CRUSH.md
